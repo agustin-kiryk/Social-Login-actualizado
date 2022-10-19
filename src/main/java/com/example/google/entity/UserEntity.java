@@ -17,23 +17,11 @@ public class UserEntity {
     private Long id;
 
     private String username;
+    private String picture;
+    private String email;
+    private String exp;
 
-    private String password;
 
-    private boolean accountNonExpired;
-
-    private boolean accountNonLocked;
-
-    private boolean credentialsNonExpired;
-
-    private boolean enabled;
-
-    public UserEntity() {
-        this.accountNonExpired = true;
-        this.accountNonLocked = true;
-        this.credentialsNonExpired = true;
-        this.enabled = true;
-    }
 
 
 }

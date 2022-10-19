@@ -5,6 +5,7 @@ import lombok.Data;
 
 @Data
 public class UserDTO {
+    private Long id;
     private String picture;
     private String name;
     private String email;
@@ -17,6 +18,7 @@ public class UserDTO {
         this.exp = date;
 
     }
+
 
 
     public static UserDTO of(String email, String name, String picture, String date) {
