@@ -22,7 +22,7 @@ public class UserMapper {
         String date = (String) attrs.get("exp");
         UserDTO dto = UserDTO.of(email, name, picture, date);
         UserEntity userEntity = new UserEntity();
-        userEntity.setUsername(dto.getName());
+        userEntity.setUsername(dto.getUserName());
         userEntity.setPicture(dto.getPicture());
         userEntity.setEmail(dto.getEmail());
         userEntity.setExp(dto.getExp());
