@@ -19,8 +19,6 @@ public class UserDTO {
 
     }
 
-
-
     public static UserDTO of(String email, String name, String picture, String date) {
         return new UserDTO(email,name,picture,date);
     }

@@ -11,8 +11,8 @@ import java.util.Map;
 
 @Component
 public class UserMapper {
-    @Autowired
-    private OAuth2AuthenticationToken oauth2;
+
+    public OAuth2AuthenticationToken oauth2;
     public UserEntity userDTO2Entity(UserDTO userDTO) {
 
         Map<String, Object> attrs = oauth2.getPrincipal().getAttributes();
@@ -36,6 +36,6 @@ public class UserMapper {
         dto.setName(entity.getUsername());
         dto.setPicture(entity.getPicture());
 
-        return null;
+        return dto;
     }
 }

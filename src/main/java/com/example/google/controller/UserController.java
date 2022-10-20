@@ -3,6 +3,7 @@ package com.example.google.controller;
 import com.example.google.dto.UserDTO;
 import com.example.google.dto.UserDTOAux;
 import com.example.google.entity.UserEntity;
+import com.example.google.repository.UserRepository;
 import com.example.google.service.UserService;
 import com.google.api.client.auth.openidconnect.IdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
@@ -15,6 +16,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
+import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.*;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdToken;
 import com.google.api.client.googleapis.auth.oauth2.GoogleIdTokenVerifier;
@@ -36,8 +38,17 @@ public class UserController {
     UserController(UserService userService){
     this.userService = userService;
    }
+   @Autowired
+    UserRepository userRepository;
 
-    @GetMapping("/userVisit")
+
+    @GetMapping
+    public Map<String, Object> currentuser(OAuth2AuthenticationToken oauth2, UserDTO dto){
+
+       return oauth2.getPrincipal().getAttributes();
+    }
+
+   @GetMapping("/userVisit")
     public UserDTO currentUser(OAuth2AuthenticationToken oauth2) {
 
         Map<String, Object> attrs = oauth2.getPrincipal().getAttributes();
@@ -45,11 +56,13 @@ public class UserController {
         String name = (String) attrs.get("name");
         String picture = (String) attrs.get("picture");
         String date = (String) attrs.get("exp");
+        UserDTO.of(email, name, picture, date);
 
         return UserDTO.of(email, name, picture, date);
+
     }
     @PostMapping
-    public ResponseEntity<UserDTOAux> save(@RequestBody UserDTOAux dto){
+    public ResponseEntity<UserDTOAux> save(@RequestBody UserDTO dto){
         UserDTOAux usersaved = userService.save(dto);
         return ResponseEntity.status(HttpStatus.CREATED).body(usersaved);
 

@@ -6,8 +6,10 @@ import org.springframework.stereotype.Service;
 
 
 public interface UserService {
-     UserDTO save(UserDTOAux dto);
+
 
 
      UserDTOAux save(UserDTO dto);
+
+     void addAccount(UserDTO userDTO);
 }
