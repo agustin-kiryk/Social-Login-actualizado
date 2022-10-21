@@ -9,8 +9,8 @@ import lombok.Setter;
 @Getter
 @Setter
 public class UserDTOAux {
-    private  Long id;
-    private  String username;
-    private  String picture;
-    private  String email;
+    private Long id;
+    private String username;
+    private String picture;
+    private String email;
 }

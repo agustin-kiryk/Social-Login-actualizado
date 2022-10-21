@@ -12,11 +12,9 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     private String username;
     private String picture;
     private String email;
-
 
     public UserEntity() {
     }
@@ -28,21 +26,17 @@ public class UserEntity {
 
     }
 
-
     public static UserEntity fromDTO(UserDTO userDTO) {
         return UserEntity.of(userDTO.getEmail(), userDTO.getUserName(), userDTO.getPicture());
     }
 
     private static UserEntity of(String email, String username, String picture) {
-        return new UserEntity(email,username,picture);
+        return new UserEntity(email, username, picture);
     }
 
     public UserDTO toDTO() {
-        return UserDTO.of(email,username, picture);
+        return UserDTO.of(email, username, picture);
     }
-
-
-
 
     public Long getId() {
         return id;
@@ -50,7 +44,6 @@ public class UserEntity {
 
     public void setId(Long id) {
         this.id = id;
-
     }
 
     public String getUsername() {

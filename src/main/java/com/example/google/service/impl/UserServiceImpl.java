@@ -19,11 +19,9 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserRepository userRepository;
 
-
     @Transactional
     @Override
-    public void  addAccount(UserDTO userDTO){
-
+    public void addAccount(UserDTO userDTO) {
         UserEntity entity = UserEntity.fromDTO(userDTO);
         userRepository.save(entity);
     }

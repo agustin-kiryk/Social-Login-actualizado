@@ -15,7 +15,6 @@ public class UserMapper {
 
     public OAuth2AuthenticationToken oauth2;
 
-
     public UserEntity userDTO2Entity(UserDTO userDTO) {
 
         Map<String, Object> attrs = oauth2.getPrincipal().getAttributes();
@@ -44,7 +43,7 @@ public class UserMapper {
 
     public List<UserDTOAux> generoEntityList2DTOList(List<UserEntity> entities) {
         List<UserDTOAux> dtos = new ArrayList<>();
-        for (UserEntity entity: entities) {
+        for (UserEntity entity : entities) {
             dtos.add(this.userEntity2DTO(entity));
         }
         return dtos;

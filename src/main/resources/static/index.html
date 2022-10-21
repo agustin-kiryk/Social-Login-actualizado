@@ -10,39 +10,7 @@
     <link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-                <img class="thumbnail" id="avatar" src="">
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" data-toggle="modal" data-target="#addModal">Add</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#" id="deleteButton">Delete</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/logout">Logout</a>
-            </li>
-        </ul>
-        <span class="navbar-text">
-                <div id="login">...</div>
-            </span>
-    </div>
-</nav>
 
-<table id="data" class="table table-striped">
-    <thead>
-    <tr>
-        <th scope="col">Check</th>
-        <th scope="col">Date</th>
-        <th scope="col">Text</th>
-    </tr>
-    </thead>
     <tbody>
 
     </tbody>
@@ -52,48 +20,6 @@
     <ul id="pages" class="pagination"></ul>
 </nav>
 
-<!-- Bootstrap Modal -->
-<div id="addModal" class="modal fade" role="dialog">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">Enter new task</h4>
-            </div>
-            <div class="modal-body">
-                <table>
-                    <tbody>
-                    <tr>
-                        <td>
-                            <input type="text" id="taskText" placeholder="Text"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span id="textSpan"></span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="datetime-local" id="taskDate" placeholder="Date"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span id="dateSpan"></span></td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <input type="button" id="submitButton" value="Add"/>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><span id="messageSpan"></span></td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.4.0.min.js"
