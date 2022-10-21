@@ -23,7 +23,7 @@ public class UserController {
     UserRepository userRepository;
 
     @GetMapping
-    public Map<String, Object> currentuser(OAuth2AuthenticationToken oauth2, UserDTO dto) {
+    public Map<String, Object> currentUser(OAuth2AuthenticationToken oauth2, UserDTO dto) {
 
         return oauth2.getPrincipal().getAttributes();
     }
