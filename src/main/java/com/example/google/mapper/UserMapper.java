@@ -3,16 +3,19 @@ package com.example.google.mapper;
 import com.example.google.dto.UserDTO;
 import com.example.google.dto.UserDTOAux;
 import com.example.google.entity.UserEntity;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.oauth2.client.authentication.OAuth2AuthenticationToken;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Map;
 
 @Component
 public class UserMapper {
 
     public OAuth2AuthenticationToken oauth2;
+
+
     public UserEntity userDTO2Entity(UserDTO userDTO) {
 
         Map<String, Object> attrs = oauth2.getPrincipal().getAttributes();
@@ -32,9 +35,20 @@ public class UserMapper {
     public UserDTOAux userEntity2DTO(UserEntity entity) {
         UserDTOAux dto = new UserDTOAux();
         dto.setId(entity.getId());
-        dto.setName(entity.getUsername());
+        dto.setUsername(entity.getUsername());
         dto.setPicture(entity.getPicture());
+        dto.setEmail(entity.getEmail());
 
         return dto;
+    }
+
+    public List<UserDTOAux> generoEntityList2DTOList(List<UserEntity> entities) {
+        List<UserDTOAux> dtos = new ArrayList<>();
+        for (UserEntity entity: entities) {
+            dtos.add(this.userEntity2DTO(entity));
+        }
+        return dtos;
+
+
     }
 }

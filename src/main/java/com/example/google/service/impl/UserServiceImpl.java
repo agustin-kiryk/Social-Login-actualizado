@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
+
 @Service
 public class UserServiceImpl implements UserService {
     @Autowired
@@ -18,26 +20,18 @@ public class UserServiceImpl implements UserService {
     UserRepository userRepository;
 
 
-
-    @Transactional
-    @Override
-    public UserDTOAux save(UserDTO dto) {
-
-        UserEntity userEntity = UserEntity.fromDTO(dto);
-        userRepository.save(userEntity);
-        return null;
-    }
-        /*UserEntity entity = userMapper.userDTO2Entity(dto);
-        UserEntity entitysaved = userRepository.save(entity);
-        UserDTOAux result = userMapper.userEntity2DTO(entitysaved);
-        return result;
-    }*/
-
     @Transactional
     @Override
     public void  addAccount(UserDTO userDTO){
 
         UserEntity entity = UserEntity.fromDTO(userDTO);
         userRepository.save(entity);
+    }
+
+    @Override
+    public List<UserDTOAux> getAllUsers() {
+        List<UserEntity> entities = userRepository.findAll();
+        List<UserDTOAux> result = userMapper.generoEntityList2DTOList(entities);
+        return result;
     }
 }

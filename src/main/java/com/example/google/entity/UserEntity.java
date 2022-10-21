@@ -1,12 +1,9 @@
 package com.example.google.entity;
 
 import com.example.google.dto.UserDTO;
-import lombok.Getter;
-import lombok.Setter;
-import org.springframework.security.core.GrantedAuthority;
 
 import javax.persistence.*;
-import java.util.Collection;
+
 @Entity
 
 @Table(name = "visitantes")

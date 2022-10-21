@@ -1,13 +1,16 @@
 package com.example.google.dto;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-@Data
+
+@Getter
+@Setter
 public class UserDTOAux {
-
-    private Long id;
-    private String picture;
-    private String name;
-    private String email;
-    private String exp; //TODO: exp = Fecha y hora de logeo en la app
+    private  Long id;
+    private  String username;
+    private  String picture;
+    private  String email;
 }
