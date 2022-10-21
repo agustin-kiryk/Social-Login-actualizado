@@ -56,12 +56,9 @@ public class UserController {
         String email = (String) attrs.get("email");
         String name = (String) attrs.get("name");
         String picture = (String) attrs.get("picture");
-       userService.addAccount(UserDTO.of(email, name, picture, picture));
-        String date = (String) attrs.get("exp");
-
-        UserDTO.of(email, name, picture, date);
-
-        return UserDTO.of(email, name, picture, date);
+        UserDTO.of(email, name, picture);
+      // userService.addAccount(UserDTO.of(email, name, picture, picture));
+        return UserDTO.of(email, name, picture);
 
     }
     @PostMapping

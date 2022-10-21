@@ -20,12 +20,11 @@ public class UserMapper {
         String name = (String) attrs.get("name");
         String picture = (String) attrs.get("picture");
         String date = (String) attrs.get("exp");
-        UserDTO dto = UserDTO.of(email, name, picture, date);
+        UserDTO dto = UserDTO.of(email, name, picture);
         UserEntity userEntity = new UserEntity();
         userEntity.setUsername(dto.getUserName());
         userEntity.setPicture(dto.getPicture());
         userEntity.setEmail(dto.getEmail());
-        userEntity.setExp(dto.getExp());
 
         return userEntity;
     }

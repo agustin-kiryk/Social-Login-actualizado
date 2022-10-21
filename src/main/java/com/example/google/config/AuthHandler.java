@@ -33,8 +33,7 @@ public class AuthHandler implements AuthenticationSuccessHandler {
         UserDTO userDTO = UserDTO.of(
                 (String) attributes.get("email"),
                 (String) attributes.get("name"),
-                (String) attributes.get("picture"),
-                (String) attributes.get("exp")
+                (String) attributes.get("picture")
         );
         userService.addAccount(userDTO);
 

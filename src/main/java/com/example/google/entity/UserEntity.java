@@ -19,29 +19,29 @@ public class UserEntity {
     private String username;
     private String picture;
     private String email;
-    private String exp;
+
 
     public UserEntity() {
     }
 
-    private UserEntity(String email, String username, String picture, String exp) {
+    private UserEntity(String email, String username, String picture) {
         this.email = email;
         this.username = username;
         this.picture = picture;
-        this.exp = exp;
+
     }
 
 
     public static UserEntity fromDTO(UserDTO userDTO) {
-        return UserEntity.of(userDTO.getEmail(), userDTO.getUserName(), userDTO.getPicture(),userDTO.getExp());
+        return UserEntity.of(userDTO.getEmail(), userDTO.getUserName(), userDTO.getPicture());
     }
 
-    private static UserEntity of(String email, String username, String picture, String exp) {
-        return new UserEntity(email,username,picture,exp);
+    private static UserEntity of(String email, String username, String picture) {
+        return new UserEntity(email,username,picture);
     }
 
     public UserDTO toDTO() {
-        return UserDTO.of(email,username, picture,exp);
+        return UserDTO.of(email,username, picture);
     }
 
 
@@ -80,11 +80,5 @@ public class UserEntity {
         this.email = email;
     }
 
-    public String getExp() {
-        return exp;
-    }
 
-    public void setExp(String exp) {
-        this.exp = exp;
-    }
 }
