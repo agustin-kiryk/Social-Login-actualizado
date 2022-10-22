@@ -7,9 +7,15 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/css-social-buttons/1.4.0/css/zocial.min.css" integrity="sha512-D+88+j7wBsrfUyRLxvAi/ZYJ+2xffS/A9skvhx8Q8cxXv5rVrNX5BYm+GblI1POb23bjAygg2nXytDHtoGc9lQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="js/goto.js"></script>
 </head>
 <body>
+
+<a href=https://github.com/agustin-kiryk class="zocial github">Follow Me GitHub</a>
+<a href=https://www.linkedin.com/in/agustin-kiryk class="zocial linkedin">Contact Linkedin</a>
+<a href=https://www.linkedin.com/in/agustin-kiryk class="zocial gmail">Contact E-mail</a>
+<a href=http://wa.me/5491123913285 class="zocial call a phone">WhatsApp Message</a>
 <nav class="navbar navbar-light bg-light">
     <div class="container-fluid">
         <a class="navbar-brand">LOGIN</a>
@@ -22,8 +28,8 @@
 <main role="main" class="container">
     <div class="starter-template">
         <p>Agustin Kiryk Social Login</p>
-        <button type="button" class="btn btn-primary btn-lg" onclick="goToURL('oauth2/authorization/google');">Login Google</button>
-        <button type="button" class="btn btn-primary btn-lg" onclick="goToURL('oauth2/authorization/facebook');">Login Facebook</button>
+        <button class="zocial google" onclick="goToURL('oauth2/authorization/google');">Login Google</button>
+        <button class="zocial facebook" onclick="goToURL('oauth2/authorization/facebook');">Login Facebook</button>
     </div>
 </main>
 
