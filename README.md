@@ -13,6 +13,8 @@ Los datos a guardar son :_
 
 _Los datos se guardan automaticamente con solo iniciar sesion en cualquiera de las opciones._
 
+_Se hizo foco en el backend de la aplicacion._
+
 ### Construccion 🔧
 
 _El modelado de la base de datos con sus respectivas relaciones se realiza automaticamente con JPA e Hibernate al levantar la aplicacion.
