@@ -44,6 +44,11 @@ spring.security.oauth2.client.registration.facebook.client-secret=<YOUR FACEBOOK
 
 - _GET/userList: Devuelve la lista de usuarios que iniciaron sesion la web_
 
+
+### Vista Previa ✔️
+
+![](https://raw.githubusercontent.com/agustin-kiryk/Social-Login-actualizado/main/Sin%20t%C3%ADtulo.png)
+
 ## Construido con 🛠️
 
 _Para realizar este pryecto se usaron las siguientes herramientas_
